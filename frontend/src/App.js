@@ -34,7 +34,7 @@ function AppContent() {
   /* ── Fetch dashboard ── */
   const fetchDashboard = useCallback(async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/dashboard');
+      const res = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/dashboard`);
       if (res.ok) {
         const data = await res.json();
         if (Array.isArray(data) && data.length > 0) {
@@ -92,7 +92,7 @@ function AppContent() {
     setSavedWidgets(widgets);
     try { localStorage.setItem('hal_widgets', JSON.stringify(widgets)); } catch {}
     try {
-      await fetch('http://localhost:5000/api/dashboard', {
+      await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:5000'}/api/dashboard`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ widgets }),
