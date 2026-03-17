@@ -1,4 +1,4 @@
-# Hal Dashboard (MERN)
+# Custom Dashboard Builder (MERN)
 
 A MERN (MongoDB, Express, React, Node.js) starter project implementing a Custom Dashboard Builder style UI for managing customer orders.
 
